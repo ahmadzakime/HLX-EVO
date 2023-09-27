@@ -17,6 +17,7 @@ const os = require('os')
 const speed = require('performance-now')
 const util = require('util')
 const yts = require('yt-search')
+const bch = require('@bochilteam/scraper')
 
 const {
     simple
