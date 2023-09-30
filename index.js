@@ -545,15 +545,8 @@ ${prefix}ytmp4 ${url}`
                         }, {
                             caption: lang.ok
                         })
-                    {
-                        alpha.replyWithPhoto({
-                            url: i.url
-                        }, {
-                            caption: lang.ok
-                        })
-                    }
+                  }
                 })
-            }
             }
             break
             case "pinterest": {
