@@ -545,6 +545,7 @@ ${prefix}ytmp4 ${url}`
                         }, {
                             caption: lang.ok
                         })
+                      })
                     } else {
                         alpha.replyWithPhoto({
                             url: i.url
@@ -552,7 +553,6 @@ ${prefix}ytmp4 ${url}`
                             caption: lang.ok
                         })
                     }
-                })
             }
             break
             case "pinterest": {
