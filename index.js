@@ -532,27 +532,26 @@ ${prefix}ytmp4 ${url}`
             case 'instareels':
             case 'instareel': {
                 if (!args[0]) return reply(`Kirim perintah:\n${prefix+command} link Instagram video/reels\n\nContoh penggunaan:\n${prefix+command} https://www.instagram.com/reel/CnVwm3KrQRl/?igshid=YmMyMTA2M2Y=`)
-                if (!isUrl(args[0])) return reply(`Kirim perintah:\n${prefix+command} link Instagram video/reels\n\nContoh penggunaan:\n${prefix+command} https://www.instagram.com/reel/CnVwm3KrQRl/?igshid=YmMyMTA2M2Y=`)let res = await fetch(global.api('alfa', '/api/downloader/instagram-photo', {
-                    url: args[0]
-                }, 'apikey'))
+                if (!isUrl(args[0])) return reply(`Kirim perintah:\n${prefix+command} link Instagram video/reels\n\nContoh penggunaan:\n${prefix+command} https://www.instagram.com/reel/CnVwm3KrQRl/?igshid=YmMyMTA2M2Y=`)
+                
+                bch.snapsave(`${text}`)
                 if (!res.ok) throw await res.text()
-                var result = await res.json()
-                var result = result.result
-                for (let i of result.url) {
-                    if (i.includes(".mp4")) {
+                .then(async(result) => {
+                for(let i of result)
+                        {
                         alpha.replyWithVideo({
-                            url: i
+                            url: i.url
                         }, {
                             caption: lang.ok
                         })
                     } else {
                         alpha.replyWithPhoto({
-                            url: i
+                            url: i.url
                         }, {
                             caption: lang.ok
                         })
                     }
-                }
+                })
             }
             break
             case "pinterest": {
