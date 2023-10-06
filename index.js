@@ -11,7 +11,6 @@ const {
     callbackQuery
 } = require("telegraf/filters");
 const chalk = require('chalk')
-const fs = require('fs')
 const fetch = require('node-fetch')
 const os = require('os')
 const fs = require('eztxt4fs')
