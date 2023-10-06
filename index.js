@@ -566,7 +566,7 @@ ${prefix}ytmp4 ${url}`
             break
             
             case 'addgh':
-                                        if (args.length < 1) return reply( `Kirim perintah ${prefix}addbadword [kata kasar]. contoh ${prefix}addbadword bego`)
+               if (args.length < 1) return reply( `Kirim perintah ${prefix}addbadword [kata kasar]. contoh ${prefix}addbadword bego`)
                                         const bw = body.slice(12)
                                         bad.push(bw)
                                         fs.writeFileSync('./database/github.json', JSON.stringify(bad))
