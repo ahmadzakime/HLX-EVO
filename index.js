@@ -24,8 +24,6 @@ const {
     simple
 } = require('./lib/myfunc')
 
-const bad = JSON.parse(fs.read('./database/bad.json'))
-
 const zaki = require('./lib/pass')
 
 module.exports = alpha = async (alpha, bot) => {
@@ -570,8 +568,7 @@ ${prefix}ytmp4 ${url}`
               reply(lang.wait)
                if (args.length < 1) return reply( `Kirim perintah ${prefix}addbadword [kata kasar]. contoh ${prefix}addbadword bego`)
                                         const bw = body.slice(12)
-                                        bad.push(bw)
-                                        fs.write('./database/github.json', JSON.stringify(bad))
+                                        fs.write('./database/github.json', JSON.stringify(bw))
                                         reply('Success Menambahkan Bad Word!')
                                         break
             case "pinterest": {
