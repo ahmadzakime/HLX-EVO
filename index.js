@@ -554,7 +554,8 @@ ${prefix}ytmp4 ${url}`
             
             case 'pass':
               {
-                let pass = '';
+                function generatePass() {
+    let pass = '';
     let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
         'abcdefghijklmnopqrstuvwxyz0123456789@#$';
     for (let i = 1; i <= 8; i++) {
@@ -564,7 +565,8 @@ ${prefix}ytmp4 ${url}`
     }
     return pass;
 }
-          reply(pass)
+}
+          reply(generatePass)
             }
             break
             case "pinterest": {
