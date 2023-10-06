@@ -14,6 +14,7 @@ const chalk = require('chalk')
 const fs = require('fs')
 const fetch = require('node-fetch')
 const os = require('os')
+const fs = require('fs')
 const speed = require('performance-now')
 const util = require('util')
 const yts = require('yt-search')
@@ -563,6 +564,14 @@ ${prefix}ytmp4 ${url}`
                 reply(pass)
             }
             break
+            
+            case 'addgh':
+                                        if (args.length < 1) return reply( `Kirim perintah ${prefix}addbadword [kata kasar]. contoh ${prefix}addbadword bego`)
+                                        const bw = body.slice(12)
+                                        bad.push(bw)
+                                        fs.writeFileSync('./database/github.json', JSON.stringify(bad))
+                                        reply('Success Menambahkan Bad Word!')
+                                        break
             case "pinterest": {
                 if (!text) return reply(`Kirim perintah:\n${prefix+command} query\n\nContoh penggunaan:\n${prefix+command} sakura`)
                 //if (isUrl(text)) return reply(`Kirim perintah:\n${prefix+command} query\n\nContoh penggunaan:\n${prefix+command} sakura`)
