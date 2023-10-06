@@ -555,7 +555,7 @@ ${prefix}ytmp4 ${url}`
             }
             break
             
-            case 'pass': {
+            case 'passg': {
                 reply(lang.wait)
                 let pass = passgen.generate({
                   length: 10,
