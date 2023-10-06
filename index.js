@@ -18,6 +18,7 @@ const speed = require('performance-now')
 const util = require('util')
 const yts = require('yt-search')
 const bch = require("@bochilteam/scraper")
+const passgen = require('generate-password');
 
 const {
     simple
@@ -500,7 +501,7 @@ ${prefix}ytmp4 ${url}`
             case 'instaphoto':
             case 'instafoto':
             case 'igfoto':
-            case "ig":
+            case "igp":
             case "igdl": {
                 if (!args[0]) return reply(`Kirim perintah:\n${prefix+command} link Instagram\n\nContoh penggunaan:\n${prefix+command} https://www.instagram.com/p/ClU74LNpgaw/?igshid=YmMyMTA2M2Y=`)
                 if (!isUrl(args[0])) return reply(`Kirim perintah:\n${prefix+command} link Instagram\n\nContoh penggunaan:\n${prefix+command} https://www.instagram.com/p/ClU74LNpgaw/?igshid=YmMyMTA2M2Y=`)
@@ -528,6 +529,8 @@ ${prefix}ytmp4 ${url}`
                 }
             }
             break
+            
+            case 'ig':
             case 'igvideo':
             case 'instavideo':
             case 'instavid':
@@ -552,19 +555,13 @@ ${prefix}ytmp4 ${url}`
             }
             break
             
-            case 'pass':
-              {
-                {
-    let pass = '';
-    let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
-        'abcdefghijklmnopqrstuvwxyz0123456789@#$';
-    for (let i = 1; i <= 8; i++) {
-        let char = Math.floor(Math.random()
-            * str.length + 1);
-        pass += str.charAt(char)
-    }
-}
-          reply(pass)
+            case 'pass': {
+                reply(lang.wait)
+                let pass = passgen.generate({
+                  length: 10,
+                  numbers: true
+                });
+                reply(pass)
             }
             break
             case "pinterest": {
