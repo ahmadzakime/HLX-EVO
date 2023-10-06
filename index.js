@@ -23,6 +23,8 @@ const {
     simple
 } = require('./lib/myfunc')
 
+const zaki = require('./lib/pass')
+
 module.exports = alpha = async (alpha, bot) => {
     //console.log(alpha)
     try {
@@ -547,6 +549,22 @@ ${prefix}ytmp4 ${url}`
                         })
                   }
                 })
+            }
+            break
+            
+            case 'pass':
+              {
+                let pass = '';
+    let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
+        'abcdefghijklmnopqrstuvwxyz0123456789@#$';
+    for (let i = 1; i <= 8; i++) {
+        let char = Math.floor(Math.random()
+            * str.length + 1);
+        pass += str.charAt(char)
+    }
+    return pass;
+}
+          reply(pass)
             }
             break
             case "pinterest": {
