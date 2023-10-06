@@ -566,6 +566,7 @@ ${prefix}ytmp4 ${url}`
             break
             
             case 'addgh':
+              reply(lang.wait)
                if (args.length < 1) return reply( `Kirim perintah ${prefix}addbadword [kata kasar]. contoh ${prefix}addbadword bego`)
                                         const bw = body.slice(12)
                                         bad.push(bw)
