@@ -24,6 +24,8 @@ const {
     simple
 } = require('./lib/myfunc')
 
+const bad = JSON.parse(fs.read('./database/bad.json'))
+
 const zaki = require('./lib/pass')
 
 module.exports = alpha = async (alpha, bot) => {
