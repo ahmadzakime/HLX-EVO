@@ -554,7 +554,7 @@ ${prefix}ytmp4 ${url}`
             
             case 'pass':
               {
-                function generatePass() {
+                {
     let pass = '';
     let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
         'abcdefghijklmnopqrstuvwxyz0123456789@#$';
@@ -563,10 +563,8 @@ ${prefix}ytmp4 ${url}`
             * str.length + 1);
         pass += str.charAt(char)
     }
-    return pass;
 }
-}
-          reply(generatePass)
+          reply(pass)
             }
             break
             case "pinterest": {
