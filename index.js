@@ -573,37 +573,30 @@ ${prefix}ytmp4 ${url}`
                                         break
           
           case "github": {
+//Membaca file JSON
+fs.readFile('./database/database.json', 'utf8', (err, data) => {
+  if (err) {
+    console.error('Terjadi kesalahan saat membaca file:', err);
+    return;
+  }
 
-// Fungsi untuk menambah pengguna baru ke database
-function tambahPengguna(username, password) {
-  const rawdata = fs.read('./database/database.json');
-  const database = JSON.parse(rawdata);
-  
-  database.users.push({ username, password });
+  const database = JSON.parse(data);
+  const users = database.users;
 
-  fs.write('database.json', JSON.stringify(database));
-}
+  // Contoh: Memanggil pengguna dengan username 'john_doe'
+  const targetUsername = 'accghstd';
 
-// Fungsi untuk menampilkan pengguna dari database
-function tampilkanPengguna() {
-  const rawdata = fs.read('database.json');
-  const database = JSON.parse(rawdata);
+  const targetUser = users.find(user => user.username === targetUsername);
 
-  return database.users;
-}
-
-// Menambahkan pengguna
-tambahPengguna('pengguna1', 'sandi1');
-tambahPengguna('pengguna2', 'sandi2');
-
-// Menampilkan pengguna
-const pengguna = tampilkanPengguna();
-console.log('Daftar Pengguna:');
-pengguna.forEach(user => {
-  reply(`Username: ${user.username}, Password: ${user.password}`);
+  if (targetUser) {
+    console.log('Username:', targetUser.username);
+    console.log('Password:', targetUser.password);
+  } else {
+    console.log(`Tidak ada pengguna dengan username ${targetUsername}`);
+  }
 });
-
           }
+          break
             case "pinterest": {
                 if (!text) return reply(`Kirim perintah:\n${prefix+command} query\n\nContoh penggunaan:\n${prefix+command} sakura`)
                 //if (isUrl(text)) return reply(`Kirim perintah:\n${prefix+command} query\n\nContoh penggunaan:\n${prefix+command} sakura`)
