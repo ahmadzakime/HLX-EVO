@@ -588,7 +588,7 @@ fs.readFile('./database/github.json', 'utf8', (err, data) => {
 
   if (targetUser) {
     reply('Username:', targetUser.username);
-    reply('Email:', targetUser.username);
+    reply('Email:', targetUser.email);
     reply('Password:', targetUser.password);
   } else {
     reply(`Tidak ada pengguna dengan username ${targetUsername}`);
