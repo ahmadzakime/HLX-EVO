@@ -572,7 +572,7 @@ ${prefix}ytmp4 ${url}`
                                         reply('Success Menambahkan Bad Word!')
                                         break
           
-          case "tes": {
+          case "github": {
 
 // Fungsi untuk menambah pengguna baru ke database
 function tambahPengguna(username, password) {
