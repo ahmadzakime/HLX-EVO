@@ -573,26 +573,41 @@ ${prefix}ytmp4 ${url}`
                                         break
           
           case "github": {
-//Membaca file JSON
-fs.readFile('./database/github.json', 'utf8', (err, data) => {
-  if (err) {
-    reply('Terjadi kesalahan saat membaca file:', err);
-    return;
-  }
+            
+function findUser(criteria, value) {
+  return new Promise((resolve, reject) => {
+    fs.readFile('./database/database.json', 'utf8', (err, data) => {
+      if (err) {
+        reject('Terjadi kesalahan saat membaca file');
+        return;
+      }
 
-  const database = JSON.parse(data);
-  const users = database.users;
+      const database = JSON.parse(data);
+      const users = database.users;
 
-  const targetUsername = `${text}`;
-  const targetUser = users.find(user => user.username === targetUsername);
-  if (targetUser) {
-    reply(`Username: ${targetUser.username}`);
-    //reply(`Email: ${targetUser.email}`)
-    //Password ${targetUser.password}`}
-  } else {
-    reply(`Tidak ada pengguna dengan username ${targetUsername}`);
-  }
-})
+      const targetUser = users.find(user => user[criteria] === value);
+
+      if (targetUser) {
+        resolve(targetUser);
+      } else {
+        reject(`Tidak ada pengguna dengan ${criteria} ${value}`);
+      }
+    });
+  });
+}
+// Memanggil fungsi untuk mencari pengguna
+const criteria = 'username'; // Ganti dengan kriteria yang Anda inginkan
+const targetValue = `${text}`; // Ganti dengan nilai yang ingin Anda cari
+
+findUser(criteria, targetValue)
+  .then(user => {
+    console.log('Username:', user.username,
+    'Email:', user.email,
+    'Password:', user.password )
+  })
+  .catch(error => {
+    console.error(error);
+  })
           }
           break
             case "pinterest": {
