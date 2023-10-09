@@ -600,10 +600,9 @@ const targetValue = `${text}`; // Ganti dengan nilai yang ingin Anda cari
 
 findUser(criteria, targetValue)
   .then(user => {
-    let hasil = `Username:', ${user.username},
-    'Email:', ${user.email},
-    'Password:', ${user.password}`
-  reply(hasil)
+    reply('Username:', user.username,
+    'Email:', user.email,
+    'Password:', user.password)
   })
   .catch(error => {
     console.error(error);
