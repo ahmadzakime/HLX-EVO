@@ -72,9 +72,9 @@ module.exports = alpha = async (alpha, bot) => {
         const latensii = speed() - timestampi
 
         const reply = async (text) => {
-            for (var x of simple.range(0, text.length, 4096)) { //maks 4096 character, jika lebih akan eror
-                return await alpha.replyWithMarkdown(text.substr(x, 4096), {
-                    disable_web_page_preview: true
+            for (var x of simple.range(0, text.length, 6000)) { //maks 4096 character, jika lebih akan eror
+                return await alpha.replyWithMarkdown(text.substr(x, 6000), {
+                    disable_web_page_preview: false
                 })
             }
         }
