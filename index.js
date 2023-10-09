@@ -575,7 +575,7 @@ ${prefix}ytmp4 ${url}`
 
 function findUser(criteria, value) {
   return new Promise((resolve, reject) => {
-    fs.readFileSync('./database/github.json', 'utf8', (err, data) => {
+    fs.readFile('./database/github.json', 'utf8', (err, data) => {
       if (err) {
         reject('Terjadi kesalahan saat membaca file');
         return;
