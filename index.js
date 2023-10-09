@@ -589,7 +589,7 @@ fs.readFile('./database/github.json', 'utf8', (err, data) => {
     //reply('Username:', targetUser.username);
     //reply('Email:', targetUser.email);
     //reply('Password:', targetUser.password);
-   var hasil = `GITHUB STUDENT PACK
+  reply(`GITHUB STUDENT PACK
 ------------------------------------------------------
 🔐Data Login 🔐
 Username: ${targetUser.username}
@@ -597,16 +597,8 @@ Email: ${targetUser.email}
 Pass: ${targetUser.password} 
 
 ------------------------------------------------------
-          ⚠️INFORMATION⚠️
-• Data Login Email dan Github sama tidak ada perbedaan 
-• Garansi Akun 3 Hari setelah Pembelian
 
-Terimakasih sudah membeli di tunggu order selanjutnya 🙏`
-                   alpha.replyWithPhoto({
-                            url: image
-                        }, {
-                            caption: hasil
-                        })
+Terimakasih sudah membeli di tunggu order selanjutnya 🙏`)
   } else {
     reply(`Tidak ada pengguna dengan username ${targetUsername}`);
   }
