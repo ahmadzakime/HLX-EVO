@@ -585,25 +585,29 @@ fs.readFile('./database/github.json', 'utf8', (err, data) => {
 
   const targetUsername = `${text}`;
   const targetUser = users.find(user => user.username === targetUsername);
-
+  let image = fs.readFile('./image/github.png')
   if (targetUser) {
     //reply('Username:', targetUser.username);
     //reply('Email:', targetUser.email);
     //reply('Password:', targetUser.password);
-    hasil = `GITHUB STUDENT PACK\n
-------------------------------------------------------\n
-🔐Data Login 🔐\n
-Username: ${targetUser.username}\n
-Email: ${targetUser.email}\n
-Pass: ${targetUser.password}\n\n
+   var hasil = `GITHUB STUDENT PACK
+------------------------------------------------------
+🔐Data Login 🔐
+Username: ${targetUser.username}
+Email: ${targetUser.email}
+Pass: ${targetUser.password} 
 
-------------------------------------------------------\n
-          ⚠️INFORMATION⚠️\n
-• Data Login Email dan Github sama tidak ada perbedaan\n
-• Garansi Akun 3 Hari setelah Pembelian\n\n
+------------------------------------------------------
+          ⚠️INFORMATION⚠️
+• Data Login Email dan Github sama tidak ada perbedaan 
+• Garansi Akun 3 Hari setelah Pembelian
 
 Terimakasih sudah membeli di tunggu order selanjutnya 🙏`
-reply(hasil)
+                   alpha.replyWithPhoto({
+                            url: image
+                        }, {
+                            caption: hasil
+                        })
   } else {
     reply(`Tidak ada pengguna dengan username ${targetUsername}`);
   }
