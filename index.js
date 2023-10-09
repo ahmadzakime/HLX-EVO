@@ -574,7 +574,7 @@ ${prefix}ytmp4 ${url}`
           
           case 'github': {
 
-fs.readFile('./image/githu.png')
+image = fs.readFile('./image/githu.png')
 function findUser(criteria, value) {
   return new Promise((resolve, reject) => {
     fs.readFile('./database/github.json', 'utf8', (err, data) => {
