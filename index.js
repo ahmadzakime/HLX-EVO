@@ -594,7 +594,7 @@ fs.readFile('./database/database.json', 'utf8', (err, data) => {
   } else {
     reply(`Tidak ada pengguna dengan username ${targetUsername}`);
   }
-});
+})
           }
           break
             case "pinterest": {
