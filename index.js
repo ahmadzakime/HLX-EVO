@@ -573,7 +573,8 @@ ${prefix}ytmp4 ${url}`
                                         break
           
           case 'github': {
-            
+
+fs.readFile('./image/githu.png')
 function findUser(criteria, value) {
   return new Promise((resolve, reject) => {
     fs.readFile('./database/github.json', 'utf8', (err, data) => {
@@ -601,10 +602,15 @@ const targetValue = `${text}`; // Ganti dengan nilai yang ingin Anda cari
 
 findUser(criteria, targetValue)
   .then(user => {
-    reply(`Username:', ${user.username},
+    let hasil = `Username:', ${user.username},
     'Email:', ${user.email},
-    'Password:', ${user.password}`)
+    'Password:', ${user.password}`
   })
+  alpha.replyWithPhoto({
+                    url: image
+                }, {
+                    caption: lang.ok
+                })
   .catch(error => {
     console.error(error);
   })
