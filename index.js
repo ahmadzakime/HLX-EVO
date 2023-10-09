@@ -586,7 +586,7 @@ fs.readFile('./database/github.json', 'utf8', (err, data) => {
   const targetUsername = `${text}`;
   const targetUser = users.find(user => user.username === targetUsername);
   if (targetUser) {
-    reply(`Username: ${targetUser.username}`)
+    reply(`Username: ${targetUser.username}`);
     //reply(`Email: ${targetUser.email}`)
     //Password ${targetUser.password}`}
   } else {
