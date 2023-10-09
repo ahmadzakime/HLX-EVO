@@ -603,8 +603,8 @@ findUser(criteria, targetValue)
     let hasil = `Username:', ${user.username},
     'Email:', ${user.email},
     'Password:', ${user.password}`
-  })
   reply(hasil)
+  })
   .catch(error => {
     console.error(error);
   })
