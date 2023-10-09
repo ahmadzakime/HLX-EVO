@@ -573,7 +573,6 @@ ${prefix}ytmp4 ${url}`
           
           case 'github': {
 
-let gh = fs.readFileSync('./image/github.png')
 function findUser(criteria, value) {
   return new Promise((resolve, reject) => {
     fs.readFile('./database/github.json', 'utf8', (err, data) => {
@@ -606,9 +605,8 @@ findUser(criteria, targetValue)
     'Password:', ${user.password}`
   })
   alpha.replyWithPhoto({
-                    url: gh
-                }, {
-                    caption: lang.ok
+                    {
+                    caption: hasil
                 })
   .catch(error => {
     console.error(error);
