@@ -583,9 +583,7 @@ fs.readFile('./database/database.json', 'utf8', (err, data) => {
   const database = JSON.parse(data);
   const users = database.users;
 
-  // Contoh: Memanggil pengguna dengan username 'john_doe'
   const targetUsername = `${text}`;
-
   const targetUser = users.find(user => user.username === targetUsername);
 
   if (targetUser) {
