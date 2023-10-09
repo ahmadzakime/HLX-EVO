@@ -601,9 +601,9 @@ const targetValue = `${text}`; // Ganti dengan nilai yang ingin Anda cari
 
 findUser(criteria, targetValue)
   .then(user => {
-    reply('Username:', user.username,
-    'Email:', user.email,
-    'Password:', user.password)
+    reply(`Username:', ${user.username},
+    'Email:', ${user.email},
+    'Password:', ${user.password}`)
   })
   .catch(error => {
     console.error(error);
