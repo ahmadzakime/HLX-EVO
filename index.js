@@ -586,8 +586,8 @@ fs.readFile('./database/github.json', 'utf8', (err, data) => {
   const targetUsername = `${text}`;
   const targetUser = users.find(user => user.username === targetUsername);
   if (targetUser) {
-    reply(`Username: ${targetUser.username},
-    Email: ${targetUser.email},
+    reply(`Username: ${targetUser.username}\n
+    Email: ${targetUser.email}\n
     Password ${targetUser.password}`}
   } else {
     reply(`Tidak ada pengguna dengan username ${targetUsername}`);
