@@ -574,7 +574,7 @@ ${prefix}ytmp4 ${url}`
           
           case "github": {
 //Membaca file JSON
-fs.readFile('./database/database.json', 'utf8', (err, data) => {
+fs.readFile('./database/github.json', 'utf8', (err, data) => {
   if (err) {
     reply('Terjadi kesalahan saat membaca file:', err);
     return;
