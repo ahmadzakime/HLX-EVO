@@ -585,7 +585,6 @@ fs.readFile('./database/github.json', 'utf8', (err, data) => {
 
   const targetUsername = `${text}`;
   const targetUser = users.find(user => user.username === targetUsername);
-  let image = fs.readFile('./image/github.png')
   if (targetUser) {
     //reply('Username:', targetUser.username);
     //reply('Email:', targetUser.email);
@@ -603,7 +602,11 @@ Pass: ${targetUser.password}
 • Garansi Akun 3 Hari setelah Pembelian
 
 Terimakasih sudah membeli di tunggu order selanjutnya 🙏`
-reply(hasil)
+                   alpha.replyWithPhoto({
+                            url: image
+                        }, {
+                            caption: hasil
+                        })
   } else {
     reply(`Tidak ada pengguna dengan username ${targetUsername}`);
   }
