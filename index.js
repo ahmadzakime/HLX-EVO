@@ -571,6 +571,39 @@ ${prefix}ytmp4 ${url}`
                                         fs.write('./database/github.json', JSON.stringify(bw))
                                         reply('Success Menambahkan Bad Word!')
                                         break
+          
+          case "tes": {
+
+// Fungsi untuk menambah pengguna baru ke database
+function tambahPengguna(username, password) {
+  const rawdata = fs.readFileSync('./database/database.json');
+  const database = JSON.parse(rawdata);
+  
+  database.users.push({ username, password });
+
+  fs.write('database.json', JSON.stringify(database));
+}
+
+// Fungsi untuk menampilkan pengguna dari database
+function tampilkanPengguna() {
+  const rawdata = fs.read('database.json');
+  const database = JSON.parse(rawdata);
+
+  return database.users;
+}
+
+// Menambahkan pengguna
+tambahPengguna('pengguna1', 'sandi1');
+tambahPengguna('pengguna2', 'sandi2');
+
+// Menampilkan pengguna
+const pengguna = tampilkanPengguna();
+console.log('Daftar Pengguna:');
+pengguna.forEach(user => {
+  reply(`Username: ${user.username}, Password: ${user.password}`);
+});
+
+          }
             case "pinterest": {
                 if (!text) return reply(`Kirim perintah:\n${prefix+command} query\n\nContoh penggunaan:\n${prefix+command} sakura`)
                 //if (isUrl(text)) return reply(`Kirim perintah:\n${prefix+command} query\n\nContoh penggunaan:\n${prefix+command} sakura`)
