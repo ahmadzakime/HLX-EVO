@@ -590,7 +590,7 @@ fs.readFile('./database/github.json', 'utf8', (err, data) => {
     //reply('Username:', targetUser.username);
     //reply('Email:', targetUser.email);
     //reply('Password:', targetUser.password);
-   var hasil = `GITHUB STUDENT PACK
+    hasil = `GITHUB STUDENT PACK
 ------------------------------------------------------
 🔐Data Login 🔐
 Username: ${targetUser.username}
