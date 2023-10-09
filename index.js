@@ -600,9 +600,19 @@ const targetValue = `${text}`; // Ganti dengan nilai yang ingin Anda cari
 
 findUser(criteria, targetValue)
   .then(user => {
-    reply('Username:', user.username,
-    'Email:', user.email,
-    'Password:', user.password)
+    reply(`GITHUB STUDENT PACK
+------------------------------------------------------
+🔐Data Login 🔐
+Username : ${user.username}
+Email: ${user.email}
+Pass: ${user.password} 
+
+------------------------------------------------------
+          ⚠️INFORMATION⚠️
+• Data Login Email dan Github sama tidak ada perbedaan 
+• Garansi Akun 3 Hari setelah Pembelian
+
+Terimakasih sudah membeli di tunggu order selanjutnya 🙏`)
   })
   .catch(error => {
     console.error(error);
