@@ -568,13 +568,12 @@ ${prefix}ytmp4 ${url}`
               reply(lang.wait)
                if (args.length < 1) return reply( `Kirim perintah ${prefix}addbadword [kata kasar]. contoh ${prefix}addbadword bego`)
                                         const bw = body.slice(12)
-                                        fs.write('./database/github.json', JSON.stringify(bw))
-                                        reply('Success Menambahkan Bad Word!')
+                                        fs.writeFile('./database/github.json', JSON.stringify(bw))
                                         break
           
           case 'github': {
 
-image = fs.readFile('./image/github.png')
+let gh = fs.readFileSync('./image/github.png')
 function findUser(criteria, value) {
   return new Promise((resolve, reject) => {
     fs.readFile('./database/github.json', 'utf8', (err, data) => {
@@ -607,7 +606,7 @@ findUser(criteria, targetValue)
     'Password:', ${user.password}`
   })
   alpha.replyWithPhoto({
-                    url: image
+                    url: gh
                 }, {
                     caption: lang.ok
                 })
