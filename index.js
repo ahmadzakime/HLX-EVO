@@ -576,7 +576,7 @@ ${prefix}ytmp4 ${url}`
 //Membaca file JSON
 fs.readFile('./database/database.json', 'utf8', (err, data) => {
   if (err) {
-    console.error('Terjadi kesalahan saat membaca file:', err);
+    reply('Terjadi kesalahan saat membaca file:', err);
     return;
   }
 
@@ -584,15 +584,15 @@ fs.readFile('./database/database.json', 'utf8', (err, data) => {
   const users = database.users;
 
   // Contoh: Memanggil pengguna dengan username 'john_doe'
-  const targetUsername = 'accghstd';
+  const targetUsername = `${text}`;
 
   const targetUser = users.find(user => user.username === targetUsername);
 
   if (targetUser) {
-    console.log('Username:', targetUser.username);
-    console.log('Password:', targetUser.password);
+    reply('Username:', targetUser.username);
+    reply('Password:', targetUser.password);
   } else {
-    console.log(`Tidak ada pengguna dengan username ${targetUsername}`);
+    reply(`Tidak ada pengguna dengan username ${targetUsername}`);
   }
 });
           }
