@@ -13,7 +13,7 @@ const {
 const chalk = require('chalk')
 const fetch = require('node-fetch')
 const os = require('os')
-const fs = require('eztxt4fs')
+const fs = require('fs')
 const speed = require('performance-now')
 const util = require('util')
 const yts = require('yt-search')
