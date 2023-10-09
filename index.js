@@ -572,7 +572,7 @@ ${prefix}ytmp4 ${url}`
                                         reply('Success Menambahkan Bad Word!')
                                         break
           
-          case "github": {
+          case 'github': {
             
 function findUser(criteria, value) {
   return new Promise((resolve, reject) => {
@@ -601,9 +601,9 @@ const targetValue = `${text}`; // Ganti dengan nilai yang ingin Anda cari
 
 findUser(criteria, targetValue)
   .then(user => {
-    console.log('Username:', user.username,
+    reply('Username:', user.username,
     'Email:', user.email,
-    'Password:', user.password )
+    'Password:', user.password)
   })
   .catch(error => {
     console.error(error);
