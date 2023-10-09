@@ -576,7 +576,7 @@ ${prefix}ytmp4 ${url}`
 
 // Fungsi untuk menambah pengguna baru ke database
 function tambahPengguna(username, password) {
-  const rawdata = fs.readFileSync('./database/database.json');
+  const rawdata = fs.read('./database/database.json');
   const database = JSON.parse(rawdata);
   
   database.users.push({ username, password });
